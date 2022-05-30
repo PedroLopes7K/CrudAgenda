@@ -32,6 +32,16 @@
   margin: 0 auto;
   margin-top: 30px;
 }
+#msg-delete {
+  color: #e90d0d;
+  background-color: rgb(219, 116, 116);
+  border: 1px solid #f47474;
+  padding: 10px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
 .actions {
   text-align: right;
   /* width: 150px; */

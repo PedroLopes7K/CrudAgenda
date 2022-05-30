@@ -8,9 +8,6 @@ $data = $_POST;
 
 // modificações no banco
 if (!empty($data)) {
-
-
-
   // print_r($data);
 
   // criar contato
@@ -33,8 +30,47 @@ if (!empty($data)) {
       $error = $e->getMessage();
       echo "ERRO: " . $error;
     }
+  } else if ($data["type"] === "edit") {
+
+    // print_r($_POST);
+    // exit;
+    $nome = $data['nome'];
+    $telefone = $data['telefone'];
+    $detalhes = $data['detalhes'];
+    $id = $data['id'];
+
+    $query = "UPDATE contatos SET nome = :nome, telefone = :telefone, detalhes = :detalhes WHERE id = :id";
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":nome", $nome);
+    $stmt->bindParam(":telefone", $telefone);
+    $stmt->bindParam(":detalhes", $detalhes);
+    $stmt->bindParam(":id", $id);
+    try {
+
+      $stmt->execute();
+      $_SESSION['msg'] = "Contato atualizado com sucesso!";
+    } catch (PDOException $e) {
+      $error = $e->getMessage();
+      echo "ERRO: " . $error;
+    }
   }
-  // IR PARA HOME APÓS O CADASTRO
+  // DELETANDO 
+  else if ($data["type"] === "delete") {
+    $id = $data['id'];
+    $query = "DELETE FROM contatos WHERE id = :id";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bindParam(":id", $id);
+    try {
+
+      $stmt->execute();
+      $_SESSION['msg'] = "Contato excluido com sucesso!";
+    } catch (PDOException $e) {
+      $error = $e->getMessage();
+      echo "ERRO: " . $error;
+    }
+  }
+  // IR PARA HOME APÓS O CADASTRO OU ATUALIZAÇÃO
   header("Location:" . $BASE_URL . "../Index.php");
 }
 // seleção de dados

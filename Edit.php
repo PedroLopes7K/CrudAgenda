@@ -7,7 +7,7 @@ include_once('templates/Header.php')
   <h1 id="main-title">Editar Contato</h1>
   <form id="edit-form" action="<?= $BASE_URL ?>config/Process.php" method="POST">
     <input type="hidden" name="type" value="edit">
-    <input type="hidden" name="type" value="<?= $contato['id'] ?>">
+    <input type="hidden" name="id" value="<?= $contato['id'] ?>">
     <div class="form-group">
       <label for="nome">Nome do contato:</label>
       <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome" value="<?= $contato['nome'] ?>" required>
