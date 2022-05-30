@@ -66,3 +66,38 @@
 .delete-icon {
   color: #bd2130;
 }
+
+/* PAGE SHOW  */
+div#view-contact-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+p.bold {
+  font-weight: bold;
+}
+#back-link-container {
+  display: block;
+  width: 500px;
+  margin: 30px auto 0;
+}
+#back-btn {
+  border: 1px solid #007BFF;
+  color: #007bff;
+  border-radius: 4px;
+  padding: 5px;
+}
+#back-btn:hover {
+text-decoration: none;
+}
+#create-form,
+#edit-form{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* MOBILE */
+@media(max-width: 580px) {
+  #home-link {
+    display: none;
+  }
+}

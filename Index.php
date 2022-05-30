@@ -33,8 +33,8 @@ include_once('templates/Header.php')
             <td scope="row"> <?= $telefone ?></td>
             <!-- <td scope="row">$contato'id' </td>  -->
             <td class="actions">
-              <a href="#"> <i class="fas fa-eye check-icon"></i></a>
-              <a href="#"> <i class="far fa-edit edit-icon"></i></a>
+              <a href="<?= $BASE_URL ?>Show.php?id=<?= $contato['id'] ?>"> <i class="fas fa-eye check-icon"></i></a>
+              <a href="<?= $BASE_URL ?>Edit.php?id=<?= $contato['id'] ?>""> <i class=" far fa-edit edit-icon"></i></a>
               <button type="submit"> <i class="fas fa-times delete-icon"></i></button>
             </td>
           </tr>
