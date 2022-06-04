@@ -4,9 +4,20 @@ include_once('templates/Header.php')
 
 <div class="container">
 
-  <?php if (isset($printMsg) && $printMsg != '') : ?>
-    <p id="msg"> <?= $printMsg ?></p>
+  <?php if (isset($printMsg)) : ?>
+    <?php if ($printMsg == 'Contato criado com sucesso!') : ?>
+      <p id="msgGreen"> <?= $printMsg ?></p>
+    <?php endif; ?>
+    <?php if ($printMsg == 'Contato atualizado com sucesso!') : ?>
+      <p id="msgBlue"> <?= $printMsg ?></p>
+    <?php endif; ?>
+    <?php if ($printMsg == 'Contato excluido com sucesso!') : ?>
+      <p id="msgRed"> <?= $printMsg ?></p>
+    <?php endif; ?>
   <?php endif; ?>
+
+
+
   <h1 id="main-title">Agenda De Contatos</h1>
   <?php if (count($contatos) > 0) : ?>
     <table class="table" id="contacts-table">

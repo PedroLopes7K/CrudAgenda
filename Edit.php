@@ -19,7 +19,7 @@ include_once('templates/Header.php')
 
     <div class="form-group">
       <label for="detalhes">Detalhes do contato:</label>
-      <textarea type="text" class="form-control" id="detalhes" name="detalhes" placeholder="Detalhes do contato" required rows="3">
+      <textarea type="text" class="form-control" id="detalhes" name="detalhes" placeholder="Detalhes do contato" rows="3">
       <?= $contato['detalhes'] ?>
       </textarea>
     </div>
